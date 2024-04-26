@@ -1,0 +1,107 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<odoo>
+
+
+
+    <!--    ############### Actions ###################-->
+
+    <record id="forms_politic_actions" model="ir.actions.act_window">
+        <field name="name">Nuevo Formulario</field>
+        <field name="res_model">forms.politic</field>
+        <field name="view_mode">tree,form</field>
+        <field name="help" type="html">
+            <p>
+                No se encontro nada.
+            </p>
+        </field>
+    </record>
+
+
+  <!--###################### View Tree #############################-->
+    <record id="tree_view_form" model="ir.ui.view">
+        <field name="name">forms.politic.view.tree</field>
+        <field name="model">forms.politic</field>
+        <field name="arch" type="xml">
+            <tree string="Generar Nuevo Formulario">
+                <field name="name" string="Nombres"/>
+                <field name="apellido"/>
+                <field name="curp"/>
+                <field name="seccional"/>
+                <field name="seccional"/>
+                <field name="colonia"/>
+                <field name="comunidad"/>
+                 <field name="telefono"/>
+                 <field name="referencia"/>
+
+
+            </tree>
+
+        </field>
+    </record>
+
+  <!--##################### View Form ###########################    -->
+
+    <record id="view_form_politic" model="ir.ui.view">
+        <field name="name">forms.politic.form</field>
+        <field name="model">forms.politic</field>
+        <field name="arch" type="xml">
+            <form>
+
+                <sheet>
+
+                    <group>
+
+
+
+                        <h2>NOMBRE COMPLETO:
+                            <field name="name" string="Nombre Completo" placeholder="Nombre Completo"
+                                   style="background:#d6d6d6"/>
+                            <field name="apellido" string="Apellido" placeholder="Apellido"
+                                   style="background:#d6d6d6"/>
+                        </h2>
+                        <h2>CURP:
+                            <field name="curp" placeholder="CURP" style="background:#d6d6d6"/>
+                        </h2>
+
+                        <group>
+                            <field name="seccional" style="background:#d6d6d6"/>
+                            <field name="colonia" style="background:#d6d6d6"/>
+                            <field name="comunidad" style="background:#d6d6d6"/>
+                            <field name="domicilio" style="background:#d6d6d6"/>
+                            <field name="telefono" style="background:#d6d6d6"/>
+
+
+                            <field name="referencia" style="background:#d6d6d6"/>
+
+
+
+                            Campo Para Solo Bajas
+                            <field name="nota" style="background:Yellow;"
+                                   placeholder="PUEDES AÑADIR ALGUNA NOTA SI ES NECESARIO!"/>
+
+
+                            <!--                            <field name="state" attrs="{'invisible': [('customer','!=',True)]}"/>-->
+                            <!--                            <field name="qr_code" widget="attachment_image"/>-->
+                            <!--                            <field name="qr"/>-->
+
+                        </group>
+                    </group>
+
+                    <group>
+
+
+                    </group>
+                </sheet>
+
+            </form>
+        </field>
+    </record>
+
+ <!--################  Menu Patrimonio #####################-->
+    <menuitem name="REGISTRO VOTO FIRME" id="forms_menu_action" sequence="-1"
+              />
+    <menuitem name="REGISTRAR" id="registro_pat" parent="forms_menu_action"
+             action="forms_politic_actions" sequence="2"/>
+
+    </odoo>

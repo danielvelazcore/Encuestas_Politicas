@@ -1,0 +1,108 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<odoo>
+
+    <record id="menu_website_custom" model="website.menu">
+        <field name="name">Registrar</field>
+        <field name="url">form_politic_web</field>
+        <field name="parent_id" ref="website.main_menu"/>
+        <field name="sequence">55</field>
+    </record>
+
+    <template id="create_form_politic" name="Crear Formulario">
+        <t t-call="website.layout">
+            <div id="wrap">
+                <div class="oe_structure">
+                    <div class="container">
+                        <form role="form" action="/create/webformpolitic" method="POST">
+                            <input type="hidden" name="csrf_token" t-att-value="request.csrf_token()"></input>
+                            <div class="form-group">
+                                <label for="name" class="control-label">Nombre Completo</label>
+                                <input type="text" name="name" t-att-value="name" id="name" class="form-control" placeholder="@Ejemplo: Luis Manuel"
+                                       required="required"></input>
+                            </div>
+                            <div class="form-group">
+                                <label for="apellido" class="control-label">Apellidos</label>
+                                <input type="text" name="apellido" t-att-value="apellido" id="apellido" class="form-control" placeholder="@Ejemplo: Pérez Hernández"
+                                       required="required"></input>
+                            </div>
+                             <div class="form-group">
+                                <label for="domicilio" class="control-label">Domicilio</label>
+                                <input type="text" name="domicilio" t-att-value="domicilio" id="domicilio" class="form-control" placeholder="@Ejemplo: Juarez #1"
+                                       required="required"></input>
+                            </div>
+                            <div class="form-group">
+                                <label for="colonia" class="control-label">Colonia</label>
+                                <input type="text" name="colonia" t-att-value="colonia" id="colonia" class="form-control" placeholder="@Ejemplo: Santa Cecilia"
+                                       required="required"></input>
+                            </div>
+                            <div class="form-group">
+                                <label for="comunidad" class="control-label">Comunidad</label>
+                                <input type="text" name="comunidad" t-att-value="comunidad" id="comunidad" class="form-control" placeholder="@Ejemplo: La Barca"
+                                       required="required"></input>
+                            </div>
+                            <div class="form-group">
+                                <label for="telefono" class="control-label">Telefono</label>
+                                <input type="text" name="telefono" t-att-value="telefono" id="telefono" class="form-control" placeholder="@Ejemplo: 393-110-2410"
+                                       required="required"></input>
+                            </div>
+                            <div class="form-group">
+                                <label for="seccional" class="control-label">Seccional</label>
+                                <input type="text" name="seccional" t-att-value="seccional" id="seccional" class="form-control" placeholder="@Ejemplo: 266 (Lo Encuentras En Tu INE)"
+                                       required="required"></input>
+                            </div>
+                            <div class="form-group">
+                                <label for="referencia" class="control-label">Referencia</label>
+                                <input type="text" name="referencia" t-att-value="referencia" id="referencia" class="form-control" placeholder="@Ejemplo: Quien Te Invito?."
+                                       required="required"></input>
+                            </div>
+                            <br/>
+                            <div class="clearfix oe_login_buttons">
+                                <button type="submit" class="btn btn-primary pull-left">Enviar</button>
+                            </div>
+                            <br/>
+                            <br/>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </t>
+    </template>
+
+
+    <record id="webform_thanks" model="website.page">
+    <field name="name">Thanks</field>
+    <field name="type">qweb</field>
+    <field name="url">create_webform</field>
+    <field name="website_published">True</field>
+    <field name="key">Encuestas_Politicas.webform_thanks</field>
+    <field name="arch" type="xml">
+        <t t-call="website.layout">
+            <script type="text/javascript">
+                $(document).ready(function(){
+                    setTimeout(function(){
+                        window.location.href = "/form_politic_web";
+                    }, 4000);
+                });
+            </script>
+            <div id="wrap">
+                 <div class="container">
+                     <h1>Gracias!</h1>
+                     <div class="row">
+                         <div class="col-lg-8">
+                             <div class="alert alert-success" role="status">
+                                 Registro Creado Correctamente!
+                             </div>
+                             <p>
+                                 Gracias por realizar el registro!
+                             </p>
+                             <a href="/form_politic_web" class="btn btn-primary">NUEVO REGISTRO</a>
+
+                         </div>
+                     </div>
+                 </div>
+            </div>
+        </t>
+    </field>
+</record>
+
+</odoo>
