@@ -42,7 +42,7 @@
 
   <!--##################### View Form ###########################    -->
 
-    <record id="view_form_politic" model="ir.ui.view">
+    <record id="view_form_politics" model="ir.ui.view">
         <field name="name">forms.politic.form</field>
         <field name="model">forms.politic</field>
         <field name="arch" type="xml">

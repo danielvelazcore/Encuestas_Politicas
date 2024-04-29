@@ -7,16 +7,16 @@ from odoo import http
 from odoo.http import request
 class forms_politics(models.Model):
     _name = 'forms.politic'
-    name = fields.Char(string="Nombres",track_visibility='always')
-    apellido = fields.Char(string="Apellidos",track_visibility='always')
-    curp = fields.Char(string="CURP",track_visibility='always')
-    seccional = fields.Char(string="Seccional",track_visibility='always')
-    domicilio = fields.Char(string="Domicilio",track_visibility='always')
-    colonia = fields.Char(string="Colonia",track_visibility='always')
-    comunidad = fields.Char(string="Comunidad",track_visibility='always')
-    telefono = fields.Char(string="Telefono",track_visibility='always')
-    referencia = fields.Char(string="Referencia",track_visibility='always')
-    nota = fields.Text(string="Nota",track_visibility='always')
+    name = fields.Char(string="Nombres")
+    apellido = fields.Char(string="Apellidos")
+    curp = fields.Char(string="CURP")
+    seccional = fields.Char(string="Seccional")
+    domicilio = fields.Char(string="Domicilio")
+    colonia = fields.Char(string="Colonia")
+    comunidad = fields.Char(string="Comunidad")
+    telefono = fields.Char(string="Telefono")
+    referencia = fields.Char(string="Referencia")
+    nota = fields.Text(string="Nota")
 
 
 # class WebsiteFormController(http.Controller):
