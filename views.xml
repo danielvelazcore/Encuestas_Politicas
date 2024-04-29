@@ -28,7 +28,7 @@
                 <field name="apellido"/>
                 <field name="curp"/>
                 <field name="seccional"/>
-                <field name="seccional"/>
+                <field name="domicilio"/>
                 <field name="colonia"/>
                 <field name="comunidad"/>
                  <field name="telefono"/>
